@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skincare Routine Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="title-block">
+      <h1>🌿 Skincare Routine Tracker</h1>
+      <p class="subtitle">Check off your AM &amp; PM steps, and keep an eye on your actives.</p>
+    </div>
+    <div class="month-nav">
+      <button id="prevMonth" class="nav-btn" title="Previous month">&larr;</button>
+      <span id="monthLabel" class="month-label"></span>
+      <button id="nextMonth" class="nav-btn" title="Next month">&rarr;</button>
+    </div>
+  </header>
+
+  <section id="activeBadges" class="active-badges"></section>
+
+  <main class="tables">
+
+    <section class="routine-block am">
+      <div class="routine-head">
+        <h2><span class="dot am-dot"></span> Morning</h2>
+        <button class="add-btn" data-section="AM">+ Add product</button>
+      </div>
+      <div class="table-scroll">
+        <table id="table-AM"></table>
+      </div>
+    </section>
+
+    <section class="routine-block pm">
+      <div class="routine-head">
+        <h2><span class="dot pm-dot"></span> Evening</h2>
+        <button class="add-btn" data-section="PM">+ Add product</button>
+      </div>
+      <div class="table-scroll">
+        <table id="table-PM"></table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bottom-bar">
+    <button id="exportBtn" class="primary-btn">💾 Save progress to Markdown</button>
+    <button id="resetBtn" class="ghost-btn">Reset this month</button>
+    <span id="saveStatus" class="save-status"></span>
+  </footer>
+
+</div>
+
+<div id="modalOverlay" class="modal-overlay hidden">
+  <div class="modal">
+    <h3>Add a product</h3>
+    <label>Name
+      <input id="modalName" type="text" placeholder="e.g. Tretinoin 0.025%">
+    </label>
+    <label class="checkbox-row">
+      <input id="modalActive" type="checkbox">
+      Track as an active ingredient (shows "last used" badge)
+    </label>
+    <div class="modal-actions">
+      <button id="modalCancel" class="ghost-btn">Cancel</button>
+      <button id="modalSave" class="primary-btn">Add</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

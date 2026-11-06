@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Exported progress snapshots (personal data)
+progress-*.md
+
+# Editor / tooling
+.vscode/
+.idea/
+.claude/
+
+# Logs
+*.log
